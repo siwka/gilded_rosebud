@@ -12,9 +12,7 @@ describe "#update_quality" do
     context "normal item" do
       let(:name) { "NORMAL ITEM" }
 
-      it "lowers the sell_in value" do
-        item.sell_in.should == initial_sell_in-1
-      end
+      it { item.sell_in.should == initial_sell_in-1 }
 
       context "before sell date" do
         it { item.quality.should == initial_quality-1 }
