@@ -3,7 +3,6 @@ require 'gilded_rose'
 describe "#update_quality" do
 
   context "with a single" do
-    let(:name) { 'name' }
     let(:initial_sell_in) { 5 }
     let(:initial_quality) { 10 }
     let(:item) { Item.new(name, initial_sell_in, initial_quality) }
@@ -16,12 +15,12 @@ describe "#update_quality" do
       it { item.sell_in.should == initial_sell_in-1 }
 
       context "before sell date" do
-        xit { item.quality.should == initial_quality-1 }
+        it { item.quality.should == initial_quality-1 }
       end
 
       context "on sell date" do
         let(:initial_sell_in) { 0 }
-        xit { item.quality.should == initial_quality-2 }
+        it { item.quality.should == initial_quality-2 }
       end
 
       context "after sell date" do
