@@ -30,7 +30,7 @@ describe "#update_quality" do
 
       context "of zero quality" do
         let(:initial_quality) { 0 }
-        xit { item.quality.should == 0 }
+        it { item.quality.should == 0 }
       end
     end
 

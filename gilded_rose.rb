@@ -10,10 +10,14 @@ end
 
 def update_quality(items)
   items.each do |item|
-    item.quality = if (item.sell_in == 0) || (item.sell_in == -10)
-      item.quality-2 
-    else
-      item.quality-1
+    if item.quality != 0
+      item.quality = if (item.sell_in == 0) || (item.sell_in == -10)
+        item.quality-2
+      # elsif item.quality == 0
+      #   item.quality = 0
+      else
+        item.quality-1
+      end
     end
     item.sell_in = item.sell_in-1
   end
