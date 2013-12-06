@@ -15,22 +15,27 @@ introduced for added complexity and difficulty.
 ## Suggestions for Constraints
 
 * Conditionals vs. Polymorphism
-    * no conditional statements
-    * no loops
+    * begin by using exclusively conditionals/loops
+    * convert to polymorphism (no conditionals/loops)
 * Primitives vs. Objects
-    * Express domain concepts as simple primitives and arrays of primitives
-    * Express domain concepts purely as custom objects and custom collection
-      objects
-* Mutability vs. Immutability
-    * all ideas are represented as state
-    * all ideas simple structures passed through a set of functions
-* No Magic Values
+    * begin by using exclusively primitives (int/float/string/etc.)
+    * collections should be arrays of primitives
+    * convert to composed objects (all values as objects)
+    * collections become single enumerable objects
+* Mutability vs. Immutability \*
+    * begin with all domain concepts represented with state
+    * convert to simple structures passed through sets of functions
 * Method Size
-    * limit length to five lines or fewer
-    * limit length to one line
-    * put all logic in single class methods
+    * begin with all behavior in a single method
+    * extract methods no longer than 5 lines
+    * extract methods no longer than 2 lines
+
+\* Immutability will require changes to the specs. This is part of the
+challenge.
 
 ## Installation
+
+Any version of Ruby at or above 1.9.3 should work just fine.
 
 If you have RSpec installed globally, there is nothing you need to do. If you
 need to install it, the easiest way is to use bundler to install the
@@ -56,6 +61,10 @@ or
 To stop the test runner at the first test failure:
 
     rake fast
+
+For convenience, all tests but the first are marked as pending. As you progress,
+unmark additional tests as pending to see them fail, then amend your
+implementation to satisfy the changing requirements.
 
 ## Original Description of the Gilded Rose
 
