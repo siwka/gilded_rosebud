@@ -3,6 +3,7 @@ require 'gilded_rose'
 describe "#update_quality" do
 
   context "with a single" do
+    let(:name) { 'name' }
     let(:initial_sell_in) { 5 }
     let(:initial_quality) { 10 }
     let(:item) { Item.new(name, initial_sell_in, initial_quality) }
