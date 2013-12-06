@@ -25,7 +25,7 @@ describe "#update_quality" do
 
       context "after sell date" do
         let(:initial_sell_in) { -10 }
-        xit { item.quality.should == initial_quality-2 }
+        it { item.quality.should == initial_quality-2 }
       end
 
       context "of zero quality" do

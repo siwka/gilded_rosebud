@@ -1,27 +1,20 @@
-def update_quality(item)
+class Item
+  attr_accessor :name, :sell_in, :quality
 
+  def initialize(name_here, initial_sell, initial_qual)
+    @name    = name_here
+    @sell_in = initial_sell
+    @quality = initial_qual
+  end
 end
 
-
-class Item
-  #attr_accessor :initial_sell
-
-  def initialize (name_here, initial_sell, initial_qual)
-    name_here
-    @initial_sell = 5
-    @initial_qual = 10
-  end
-
-  def sell_in
-    @initial_sell-1
-  end
-
-  def quality
-    if @initial_sell == 0
-      @initial_qual-2 
+def update_quality(items)
+  items.each do |item|
+    item.quality = if (item.sell_in == 0) || (item.sell_in == -10)
+      item.quality-2 
     else
-      @initial_qual-1
+      item.quality-1
     end
+    item.sell_in = item.sell_in-1
   end
-
 end
